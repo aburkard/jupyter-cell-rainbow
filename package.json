@@ -4,6 +4,11 @@
   "description": "Tint each notebook cell by its position so you never lose your place.",
   "version": "0.1.0",
   "publisher": "aburkard",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aburkard/jupyter-cell-rainbow.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
