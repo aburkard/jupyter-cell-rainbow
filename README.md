@@ -1,54 +1,43 @@
 # Jupyter Cell Rainbow
 
-A tiny VS Code extension that tints each notebook cell by its position, so scrolling through a long notebook doesn't feel like wading through identical gray boxes.
+I often lose my place easily when scrolling around in Jupyter notebooks, so I made a vscode extension that colors cells as a visual help.
 
-![Screenshot](docs/screenshot.png)
+![screenshot](docs/screenshot.png)
 
 ## Install
 
-Grab the latest `.vsix` from the [releases page](https://github.com/aburkard/jupyter-cell-rainbow/releases) (or build one locally — see below) and:
-
-```bash
-code --install-extension jupyter-cell-rainbow-0.1.0.vsix
 ```
-
-## Use
-
-Open any `.ipynb`. Cells pick up a tinted background and a matching stripe in the overview ruler on the right edge. Nothing to configure.
-
-## Settings
-
-`Cmd+,` → search **"jupyter cell rainbow"**:
-
-| Setting | Default | What it does |
-| --- | --- | --- |
-| `enabled` | `true` | Turn coloring on/off. |
-| `palette` | `rainbow` | `rainbow`, `pastel`, `ocean`, `warm`, or `custom`. |
-| `customColors` | — | Hex colors used when `palette` is `custom`. |
-| `opacity` | `0.12` | Background tint opacity. Higher = more saturated. |
-| `cycleLength` | `12` | Distinct colors before the palette repeats. |
-
-## Commands
-
-`Cmd+Shift+P`:
-
-- **Jupyter Cell Rainbow: Toggle** — on/off
-- **Jupyter Cell Rainbow: Pick Palette** — quick palette switcher
-- **Jupyter Cell Rainbow: Refresh Colors** — force reapply
-
-## Limits
-
-Decoration covers the Monaco editor area inside each cell, not the outer cell frame/toolbar. That's a VS Code extension API limitation (issue [#15489](https://github.com/microsoft/vscode-jupyter/issues/15489)) — the full-frame look requires CSS injection via a separate tool like [Apc Customize UI++](https://marketplace.visualstudio.com/items?itemName=drcika.apc-extension), which in turn patches VS Code's install files and wants admin. Not worth it for most people.
-
-Rendered (non-edit) markdown cells don't have a text editor to decorate, so they stay uncolored.
-
-## Build from source
-
-```bash
+git clone https://github.com/aburkard/jupyter-cell-rainbow.git
+cd jupyter-cell-rainbow
 npm install
 npm run build
 npx vsce package
+code --install-extension jupyter-cell-rainbow-0.1.0.vsix
 ```
+
+## Settings
+
+Cmd+, and search "jupyter cell rainbow":
+
+- `enabled` — on/off
+- `palette` — rainbow, pastel, ocean, warm, or custom
+- `customColors` — hex colors used when palette is custom
+- `opacity` — 0 to 1, default 0.12
+- `cycleLength` — colors before the palette repeats
+
+## Commands
+
+Cmd+Shift+P:
+
+- Jupyter Cell Rainbow: Toggle
+- Jupyter Cell Rainbow: Pick Palette
+- Jupyter Cell Rainbow: Refresh Colors
+
+## Limitations
+
+Only the code editor area inside each cell gets colored, not the outer cell frame or the toolbar. That's a vscode api limitation (see [vscode-jupyter#15489](https://github.com/microsoft/vscode-jupyter/issues/15489)). Coloring the whole frame needs css injection via something like apc customize ui++, which patches vscode's install files and wants admin. wasn't worth it.
+
+Rendered markdown cells have no text editor behind them so they don't get colored.
 
 ## License
 
