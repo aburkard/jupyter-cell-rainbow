@@ -1,6 +1,6 @@
 # Jupyter Cell Rainbow
 
-I often lose my place easily when scrolling around in Jupyter notebooks, so I made a vscode extension that colors cells as a visual help.
+A vscode extension that colors each Jupyter notebook cell based on its position, so it's easier to keep track of where you are while scrolling.
 
 ![screenshot](docs/screenshot.png)
 
