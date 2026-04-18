@@ -5,9 +5,18 @@
   "version": "0.1.0",
   "publisher": "aburkard",
   "license": "MIT",
+  "icon": "icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/aburkard/jupyter-cell-rainbow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aburkard/jupyter-cell-rainbow/issues"
+  },
+  "homepage": "https://github.com/aburkard/jupyter-cell-rainbow#readme",
+  "galleryBanner": {
+    "color": "#1e1e20",
+    "theme": "dark"
   },
   "engines": {
     "vscode": "^1.85.0"
@@ -15,6 +24,15 @@
   "categories": [
     "Notebooks",
     "Visualization"
+  ],
+  "keywords": [
+    "jupyter",
+    "notebook",
+    "rainbow",
+    "colors",
+    "cells",
+    "palette",
+    "navigation"
   ],
   "activationEvents": [
     "onNotebook:jupyter-notebook",
